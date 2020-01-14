@@ -49,12 +49,9 @@ class martua_ElementorCustomElement {
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-banner.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-title.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-accordion.php');
-         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-contact.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-counter.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-partner.php');
-         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-map.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-products.php');
-         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-productthumb.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-service.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-testimonials.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-blog.php');

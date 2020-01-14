@@ -29,21 +29,7 @@ class martua_Widget_Product extends Widget_Base {
             'type' => Controls_Manager::SECTION,
          ]
       );
-
-      $this->add_control(
-         'style',
-         [
-            'label' => __( 'Service Style', 'martua' ),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'style1',
-            'options' => [
-               'style1'  => __( 'Style 1', 'martua' ),
-               'style2' => __( 'Style 2', 'martua' ),
-               'style3' => __( 'Style 3', 'martua' ),
-            ],
-         ]
-      );
-
+      
 
       $this->add_control(
          'ppp',
@@ -82,7 +68,7 @@ class martua_Widget_Product extends Widget_Base {
 
       <div class="row justify-content-center">
         <div class="text-center">
-          <div class="product-menu <?php if ( $settings['style'] == 'style2' or $settings['style'] == 'style3' ){ echo 's-product-menu'; } ?> mb-60">
+          <div class="product-menu mb-60">
             <button class="active" data-filter="*">All Items</button>
             <?php  $product_menu_terms = get_terms( array(
                'taxonomy' => 'product_cat',

@@ -48,7 +48,7 @@ class martua_Widget_Banner2 extends Widget_Base {
          [
             'label' => __( 'Title', 'martua' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Let\'s Start. Marketplace for Digital Themes & Plugins','martua')
+            'default' => __('Let\'s Start. Digital Marketplace for Themes & Plugins','martua')
          ]
       );
 
@@ -72,7 +72,7 @@ class martua_Widget_Banner2 extends Widget_Base {
       <section class="slider-area s-slider-bg" style="background-image: url(<?php echo esc_url($settings['banner_image']['url']) ?>)">
           <div class="container">
               <div class="row justify-content-center">
-                  <div class="col-xl-8 col-lg-10">
+                  <div class="col-xl-10">
                       <div class="slider-content s-slider-content text-center mb-45">
                           <h2><?php echo $settings['title'] ?></h2>
                           <p><?php echo esc_html( $settings['description'] ) ?></p>

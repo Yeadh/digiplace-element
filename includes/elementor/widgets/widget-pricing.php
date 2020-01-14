@@ -65,22 +65,6 @@ class martua_Widget_Pricing extends Widget_Base {
             'default' => '70'
          ]
       );
-      
-      $this->add_control(
-         'package',
-         [
-            'label' => __( 'Package', 'martua' ),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'Yealry',
-            'options' => [
-               'Daily'  => __( 'Daily', 'martua' ),
-               'Weekly'  => __( 'Weekly', 'martua' ),
-               'Monthly' => __( 'Monthly', 'martua' ),
-               'Yealry' => __( 'Yealry', 'martua' ),
-               'none' => __( 'None', 'martua' )
-            ],
-         ]
-      );
 
       $feature = new \Elementor\Repeater();
 
@@ -161,13 +145,11 @@ class martua_Widget_Pricing extends Widget_Base {
 
 
       <div class="single-pricing text-center <?php if ( 'on' == $settings['recommended'] ){ echo"active"; }?>">
-         <div class="pricing-head mb-30">
-             <div class="pricing-icon mb-15">
+         <div class="pricing-head mb-25">
+             <div class="pricing-icon mb-40">
                  <img src="<?php echo esc_url( $settings['icon']['url'] ); ?>" alt="<?php echo esc_attr( $settings['title'] ); ?>">
              </div>
-             <h5><?php echo esc_html( $settings['title'] ); ?></h5>
-             <span><?php echo esc_html( $settings['package'] ); ?></span>
-             <p>Subscribe Best Plans</p>
+             <h3><?php echo esc_html( $settings['title'] ); ?></h3>
              <div class="price-count">
                  <h4><?php echo $settings['price']; ?></h4>
              </div>
@@ -180,7 +162,7 @@ class martua_Widget_Pricing extends Widget_Base {
              </ul>
          </div>
          <div class="pricing-btn">
-             <a href="<?php echo esc_attr( $settings['btn_url'] ) ?>" class="btn"><?php echo esc_html( $settings['btn_text'] ) ?><i class="fas fa-shopping-cart"></i></a>
+             <a href="<?php echo esc_attr( $settings['btn_url'] ) ?>" class="btn"><?php echo esc_html( $settings['btn_text'] ) ?></a>
          </div>
       </div>
 
