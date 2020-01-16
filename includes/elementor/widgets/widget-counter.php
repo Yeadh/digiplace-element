@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class martua_Widget_Counter extends Widget_Base {
+class digiplace_Widget_Counter extends Widget_Base {
  
    public function get_name() {
       return 'counter';
    }
  
    public function get_title() {
-      return esc_html__( 'Counter', 'martua' );
+      return esc_html__( 'Counter', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class martua_Widget_Counter extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class martua_Widget_Counter extends Widget_Base {
       $this->start_controls_section(
          'counter_section',
          [
-            'label' => esc_html__( 'Counter', 'martua' ),
+            'label' => esc_html__( 'Counter', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -37,7 +37,7 @@ class martua_Widget_Counter extends Widget_Base {
       $counter->add_control(
          'icon',
          [
-            'label' => __( 'Icon', 'martua' ),
+            'label' => __( 'Icon', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::MEDIA
          ]
       );
@@ -45,7 +45,7 @@ class martua_Widget_Counter extends Widget_Base {
       $counter->add_control(
          'count',
          [
-            'label' => __( 'Count', 'martua' ),
+            'label' => __( 'Count', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT
          ]
       );
@@ -53,7 +53,7 @@ class martua_Widget_Counter extends Widget_Base {
       $counter->add_control(
          'title',
          [
-            'label' => __( 'Title', 'martua' ),
+            'label' => __( 'Title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT
          ]
       );
@@ -61,7 +61,7 @@ class martua_Widget_Counter extends Widget_Base {
       $this->add_control(
          'counter',
          [
-            'label' => __( 'Counter', 'martua' ),
+            'label' => __( 'Counter', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $counter->get_controls(),
             'title_field' => '{{title}}',
@@ -105,4 +105,4 @@ class martua_Widget_Counter extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Counter );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Counter );

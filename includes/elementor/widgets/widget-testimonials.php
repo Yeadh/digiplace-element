@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class martua_Widget_Testimonials extends Widget_Base {
+class digiplace_Widget_Testimonials extends Widget_Base {
  
    public function get_name() {
       return 'testimonials';
    }
  
    public function get_title() {
-      return esc_html__( 'Testimonials', 'martua' );
+      return esc_html__( 'Testimonials', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class martua_Widget_Testimonials extends Widget_Base {
    }
 
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class martua_Widget_Testimonials extends Widget_Base {
       $this->start_controls_section(
          'testimonial_section',
          [
-            'label' => esc_html__( 'Testimonials', 'martua' ),
+            'label' => esc_html__( 'Testimonials', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -37,7 +37,7 @@ class martua_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'image',
          [
-            'label' => __( 'Choose Photo', 'martua' ),
+            'label' => __( 'Choose Photo', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src()
@@ -48,9 +48,9 @@ class martua_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'name',
          [
-            'label' => __( 'Name', 'martua' ),
+            'label' => __( 'Name', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __( 'Emaley Mcculloch', 'martua' ),
+            'default' => __( 'Emaley Mcculloch', 'digiplace' ),
             
          ]
       );
@@ -58,34 +58,34 @@ class martua_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'designation',
          [
-            'label' => __( 'Designation', 'martua' ),
+            'label' => __( 'Designation', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __( 'Founder ceo', 'martua' ),
+            'default' => __( 'Founder ceo', 'digiplace' ),
          ]
       );
 
       $repeater->add_control(
          'testimonial',
          [
-            'label' => __( 'Testimonial', 'martua' ),
+            'label' => __( 'Testimonial', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __( 'In promotion and of advertising testimonial show consiss of a person\'s written orsoken statement extollig the virtue', 'martua' ),
+            'default' => __( 'In promotion and of advertising testimonial show consiss of a person\'s written orsoken statement extollig the virtue', 'digiplace' ),
          ]
       );
 
       $repeater->add_control(
         'rating',
         [
-          'label' => __( 'Rating', 'martua' ),
+          'label' => __( 'Rating', 'digiplace' ),
           'type' => \Elementor\Controls_Manager::SELECT,
           'default' => 1,
           'options' => [
-            1 => __( 'Star 1', 'martua' ),
-            2 => __( 'Star 2', 'martua' ),
-            3 => __( 'Star 3', 'martua' ),
-            4 => __( 'Star 4', 'martua' ),
-            5 => __( 'Star 5', 'martua' ),
-            'none' => __( 'None', 'martua' ),
+            1 => __( 'Star 1', 'digiplace' ),
+            2 => __( 'Star 2', 'digiplace' ),
+            3 => __( 'Star 3', 'digiplace' ),
+            4 => __( 'Star 4', 'digiplace' ),
+            5 => __( 'Star 5', 'digiplace' ),
+            'none' => __( 'None', 'digiplace' ),
           ]
         ]
       );
@@ -93,7 +93,7 @@ class martua_Widget_Testimonials extends Widget_Base {
       $this->add_control(
          'testimonial_list',
          [
-            'label' => __( 'Testimonial List', 'martua' ),
+            'label' => __( 'Testimonial List', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls(),
             'title_field' => '{{name}}',
@@ -144,4 +144,4 @@ class martua_Widget_Testimonials extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Testimonials );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Testimonials );

@@ -1,21 +1,21 @@
 <?php
 /**
  * Add Recent Post Widget.
- * @package martua
+ * @package digiplace
  */
-if( !class_exists('martua_Author') ){
-	class martua_Author extends WP_Widget{
+if( !class_exists('digiplace_Author') ){
+	class digiplace_Author extends WP_Widget{
 		/**
 		 * Register widget with WordPress.
 		 */
 		function __construct(){
 
 			$widget_options = array(
-				'description'					=> esc_html__('martua author here', 'martua'), 
+				'description'					=> esc_html__('digiplace author here', 'digiplace'), 
 				'customize_selective_refresh' 	=> true,
 			);
 
-			parent:: __construct('martua_Author', esc_html__( 'Author : martua', 'martua'), $widget_options );
+			parent:: __construct('digiplace_Author', esc_html__( 'Author : digiplace', 'digiplace'), $widget_options );
 
 		}
 		
@@ -35,10 +35,10 @@ if( !class_exists('martua_Author') ){
 
 		}
 		
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'About Author','martua' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'About Author','digiplace' );
 		$profile_image = ( ! empty( $instance['profile_image'] ) ) ? $instance['profile_image'] : '';
-		$designation = ( ! empty( $instance['designation'] ) ) ? $instance['designation'] : esc_html__( 'Markplus CEO','martua' );
-		$short_description = ( ! empty( $instance['short_description'] ) ) ? $instance['short_description'] : esc_html__( 'A design is plan or specification for the construction','martua' );
+		$designation = ( ! empty( $instance['designation'] ) ) ? $instance['designation'] : esc_html__( 'Markplus CEO','digiplace' );
+		$short_description = ( ! empty( $instance['short_description'] ) ) ? $instance['short_description'] : esc_html__( 'A design is plan or specification for the construction','digiplace' );
 		$facebook = ( ! empty( $instance['facebook'] ) ) ? $instance['facebook'] : '#';
 		$twitter = ( ! empty( $instance['twitter'] ) ) ? $instance['twitter'] : '#';
 		$pinterest = ( ! empty( $instance['pinterest'] ) ) ? $instance['pinterest'] : '#';
@@ -119,37 +119,37 @@ if( !class_exists('martua_Author') ){
 		?>
 
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','martua' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','digiplace' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 		<p>
-	        <label for="<?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>"><?php echo esc_html__( 'Profile image:','martua' ); ?></label>
+	        <label for="<?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>"><?php echo esc_html__( 'Profile image:','digiplace' ); ?></label>
 	        <img class="<?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>_img" src="<?php echo esc_url($profile_image); ?>" style="margin:0;padding:0;max-width:100%;display:block"/>
 	        <input type="text" class="widefat <?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>_url" name="<?php echo esc_attr($this->get_field_name( 'profile_image' )); ?>" value="<?php echo esc_attr($profile_image); ?>" style="margin-top:5px;" />
 	        <input type="button" id="<?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>" class="button button-primary js_custom_upload_media" value="Upload Image" style="margin-top:5px;" />
 	    </p>
 	    <p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'designation' )); ?>"><?php echo esc_html__( 'Designation:','martua' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'designation' )); ?>"><?php echo esc_html__( 'Designation:','digiplace' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'designation' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'designation' )); ?>" type="text" value="<?php echo esc_attr($designation); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'short_description' )); ?>"><?php echo esc_html__( 'Short description:','martua' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'short_description' )); ?>"><?php echo esc_html__( 'Short description:','digiplace' ); ?></label>
 			<textarea class="widefat" rows="5" cols="30" id="<?php echo esc_attr($this->get_field_id( 'short_description' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'short_description' )); ?>"><?php echo stripslashes( $short_description ); ?></textarea>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'facebook' )); ?>"><?php echo esc_html__( 'Facebook:','martua' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'facebook' )); ?>"><?php echo esc_html__( 'Facebook:','digiplace' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'facebook' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'facebook' )); ?>" type="text" value="<?php echo esc_attr($facebook); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'twitter' )); ?>"><?php echo esc_html__( 'Twitter:','martua' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'twitter' )); ?>"><?php echo esc_html__( 'Twitter:','digiplace' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'twitter' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'twitter' )); ?>" type="text" value="<?php echo esc_attr($twitter); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'pinterest' )); ?>"><?php echo esc_html__( 'Pinterest:','martua' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'pinterest' )); ?>"><?php echo esc_html__( 'Pinterest:','digiplace' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'pinterest' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'pinterest' )); ?>" type="text" value="<?php echo esc_attr($pinterest); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'linkedin' )); ?>"><?php echo esc_html__( 'Linkedin:','martua' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'linkedin' )); ?>"><?php echo esc_html__( 'Linkedin:','digiplace' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'linkedin' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'linkedin' )); ?>" type="text" value="<?php echo esc_attr($linkedin); ?>" />
 		</p>
 
@@ -161,7 +161,7 @@ if( !class_exists('martua_Author') ){
 
 
 // register Contact  Widget widget
-function martua_Author(){
-	register_widget('martua_Author');
+function digiplace_Author(){
+	register_widget('digiplace_Author');
 }
-add_action('widgets_init','martua_Author');
+add_action('widgets_init','digiplace_Author');

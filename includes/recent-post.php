@@ -1,21 +1,21 @@
 <?php
 /**
  * Add Recent Post Widget.
- * @package martua
+ * @package digiplace
  */
-if( !class_exists('martua_Recent_Post') ){
-	class martua_Recent_Post extends WP_Widget{
+if( !class_exists('digiplace_Recent_Post') ){
+	class digiplace_Recent_Post extends WP_Widget{
 		/**
 		 * Register widget with WordPress.
 		 */
 		function __construct(){
 
 			$widget_options = array(
-				'description'					=> esc_html__('martua recent post here', 'martua'), 
+				'description'					=> esc_html__('digiplace recent post here', 'digiplace'), 
 				'customize_selective_refresh' 	=> true,
 			);
 
-			parent:: __construct('martua_Recent_Post', esc_html__( 'Recent Post : martua', 'martua'), $widget_options );
+			parent:: __construct('digiplace_Recent_Post', esc_html__( 'Recent Post : digiplace', 'digiplace'), $widget_options );
 
 		}
 		
@@ -35,7 +35,7 @@ if( !class_exists('martua_Recent_Post') ){
 
 		}
 		
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts','martua' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts','digiplace' );
 		
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
@@ -63,7 +63,7 @@ if( !class_exists('martua_Recent_Post') ){
                     	<?php if (has_post_thumbnail( )): ?>
                     	<div class="rc-post-thumb">
                             <a href="<?php the_permalink() ?>">
-                            	<?php the_post_thumbnail( 'martua-95x84' ); ?>
+                            	<?php the_post_thumbnail( 'digiplace-95x84' ); ?>
                             </a>
                         </div>
                     	<?php endif ?>
@@ -111,11 +111,11 @@ if( !class_exists('martua_Recent_Post') ){
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$show_item    = isset( $instance['show_item'] ) ? absint( $instance['show_item'] ) : 4;
 	?>
-		<p><label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','martua' ); ?></label>
+		<p><label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','digiplace' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'show_item' )); ?>"><?php echo esc_html__( 'No. of Item of posts to show:','martua' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'show_item' )); ?>"><?php echo esc_html__( 'No. of Item of posts to show:','digiplace' ); ?></label>
 			<input class="tiny-text" id="<?php echo esc_attr(esc_attr($this->get_field_id( 'show_item' ))); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_item' )); ?>" type="number" step="1" min="1" value="<?php echo esc_attr($show_item); ?>" size="3" />
 		</p>
 
@@ -127,7 +127,7 @@ if( !class_exists('martua_Recent_Post') ){
 
 
 // register Contact  Widget widget
-function martua_Recent_Post(){
-	register_widget('martua_Recent_Post');
+function digiplace_Recent_Post(){
+	register_widget('digiplace_Recent_Post');
 }
-add_action('widgets_init','martua_Recent_Post');
+add_action('widgets_init','digiplace_Recent_Post');

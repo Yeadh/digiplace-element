@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Pricing
-class martua_Widget_Pricing extends Widget_Base {
+class digiplace_Widget_Pricing extends Widget_Base {
  
    public function get_name() {
       return 'pricing';
    }
  
    public function get_title() {
-      return esc_html__( 'Pricing', 'martua' );
+      return esc_html__( 'Pricing', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class martua_Widget_Pricing extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class martua_Widget_Pricing extends Widget_Base {
       $this->start_controls_section(
          'pricing_section',
          [
-            'label' => esc_html__( 'Pricing', 'martua' ),
+            'label' => esc_html__( 'Pricing', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,7 +35,7 @@ class martua_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'title', 'martua' ),
+            'label' => __( 'title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Standard Plan'
          ]
@@ -44,7 +44,7 @@ class martua_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'desc',
          [
-            'label' => __( 'Description', 'martua' ),
+            'label' => __( 'Description', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA
          ]
       );
@@ -52,7 +52,7 @@ class martua_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'icon',
          [
-            'label' => __( 'icon', 'martua' ),
+            'label' => __( 'icon', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::MEDIA
          ]
       );
@@ -60,7 +60,7 @@ class martua_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'price',
          [
-            'label' => __( 'Price', 'martua' ),
+            'label' => __( 'Price', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '70'
          ]
@@ -71,33 +71,33 @@ class martua_Widget_Pricing extends Widget_Base {
       $feature->add_control(
          'feature',
          [
-            'label' => __( 'Feature', 'martua' ),
+            'label' => __( 'Feature', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __( '10 Free Domain Names', 'martua' )
+            'default' => __( '10 Free Domain Names', 'digiplace' )
          ]
       );
 
       $this->add_control(
          'feature_list',
          [
-            'label' => __( 'Feature List', 'martua' ),
+            'label' => __( 'Feature List', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $feature->get_controls(),
             'default' => [
                [
-                  'feature' => __( '5GB Storage Space', 'martua' )
+                  'feature' => __( '5GB Storage Space', 'digiplace' )
                ],
                [
-                  'feature' => __( '20GB Monthly Bandwidth', 'martua' )
+                  'feature' => __( '20GB Monthly Bandwidth', 'digiplace' )
                ],
                [
-                  'feature' => __( 'My SQL Databases', 'martua' )
+                  'feature' => __( 'My SQL Databases', 'digiplace' )
                ],
                [
-                  'feature' => __( '100 Email Account', 'martua' )
+                  'feature' => __( '100 Email Account', 'digiplace' )
                ],
                [
-                  'feature' => __( '10 Free Domain Names', 'martua' )
+                  'feature' => __( '10 Free Domain Names', 'digiplace' )
                ]
             ],
             'title_field' => '{{{ feature }}}',
@@ -107,7 +107,7 @@ class martua_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'btn_text',
          [
-            'label' => __( 'button text', 'martua' ),
+            'label' => __( 'button text', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Buy Now',
          ]
@@ -116,7 +116,7 @@ class martua_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'btn_url',
          [
-            'label' => __( 'button URL', 'martua' ),
+            'label' => __( 'button URL', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#',
          ]
@@ -125,10 +125,10 @@ class martua_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'recommended',
          [
-            'label' => __( 'Recommended', 'martua' ),
+            'label' => __( 'Recommended', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'martua' ),
-            'label_off' => __( 'Off', 'martua' ),
+            'label_on' => __( 'On', 'digiplace' ),
+            'label_off' => __( 'Off', 'digiplace' ),
             'return_value' => 'on',
             'default' => 'off',
          ]
@@ -170,4 +170,4 @@ class martua_Widget_Pricing extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Pricing );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Pricing );

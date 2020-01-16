@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class martua_Widget_Partner extends Widget_Base {
+class digiplace_Widget_Partner extends Widget_Base {
  
    public function get_name() {
       return 'partner';
    }
  
    public function get_title() {
-      return esc_html__( 'Partner', 'martua' );
+      return esc_html__( 'Partner', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class martua_Widget_Partner extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class martua_Widget_Partner extends Widget_Base {
       $this->start_controls_section(
          'partner_section',
          [
-            'label' => esc_html__( 'partner', 'martua' ),
+            'label' => esc_html__( 'partner', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -38,7 +38,7 @@ class martua_Widget_Partner extends Widget_Base {
       $repeater->add_control(
          'image',
          [
-            'label' => __( 'Choose Photo', 'martua' ),
+            'label' => __( 'Choose Photo', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src()
@@ -49,7 +49,7 @@ class martua_Widget_Partner extends Widget_Base {
       $repeater->add_control(
          'url',
          [
-            'label' => __( 'URL', 'martua' ),
+            'label' => __( 'URL', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#',
          ]
@@ -58,7 +58,7 @@ class martua_Widget_Partner extends Widget_Base {
       $this->add_control(
          'partner_list',
          [
-            'label' => __( 'Partner List', 'martua' ),
+            'label' => __( 'Partner List', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls()
 
@@ -90,4 +90,4 @@ class martua_Widget_Partner extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Partner );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Partner );

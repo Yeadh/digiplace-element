@@ -10,10 +10,10 @@
  *
  * @link              https://ThemeBeyond.com
  * @since             1.0.0
- * @package           Martua_Element
+ * @package           digiplace_Element
  *
  * @wordpress-plugin
- * Plugin Name:       Martua Element
+ * Plugin Name:       DigiPlace Element
  * Plugin URI:        https://ThemeBeyond.com/mega-addons-for-elementor
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
@@ -21,7 +21,7 @@
  * Author URI:        https://ThemeBeyond.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       martua
+ * Text Domain:       digiplace
  * Domain Path:       /languages
  */
 
@@ -30,20 +30,20 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-class martua {
+class digiplace {
 
 	function __construct() {
 		$this->load_plugin_textdomain();
 		$this->load_dependencies();
-		$this->martua_setup();
+		$this->digiplace_setup();
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 
 	}
 
-	public function martua_setup() {
-		add_image_size( 'martua-77x64', 77,64, true );
-		add_image_size( 'martua-100x75', 100,75, true );
+	public function digiplace_setup() {
+		add_image_size( 'digiplace-77x64', 77,64, true );
+		add_image_size( 'digiplace-100x75', 100,75, true );
 	}
 
 	public function load_plugin_textdomain() {
@@ -51,16 +51,16 @@ class martua {
 	}
 
 	public function enqueue_scripts() {
-		wp_register_style( 'martua-plugin-style', plugin_dir_url( __FILE__ ) . 'public/assets/css/style.css' );
-		wp_register_script( 'martua-plugin-main-js', plugin_dir_url( __FILE__ ) . 'public/assets/js/main.js' );
+		wp_register_style( 'digiplace-plugin-style', plugin_dir_url( __FILE__ ) . 'public/assets/css/style.css' );
+		wp_register_script( 'digiplace-plugin-main-js', plugin_dir_url( __FILE__ ) . 'public/assets/js/main.js' );
 
-		wp_enqueue_style( 'martua-plugin-style' );
-		wp_enqueue_script( 'martua-plugin-main-js' );
+		wp_enqueue_style( 'digiplace-plugin-style' );
+		wp_enqueue_script( 'digiplace-plugin-main-js' );
 	}
 
 	public function admin_scripts() {
 	    wp_enqueue_media();
-	    wp_enqueue_script('martua-admin-main-js', plugin_dir_url( __FILE__ ) . 'admin/assets/js/main.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+	    wp_enqueue_script('digiplace-admin-main-js', plugin_dir_url( __FILE__ ) . 'admin/assets/js/main.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
 	}
 
 	private function load_dependencies() {
@@ -71,4 +71,4 @@ class martua {
 	}
 
 }
-new martua();
+new digiplace();

@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // blog
-class martua_Widget_Blog extends Widget_Base {
+class digiplace_Widget_Blog extends Widget_Base {
  
    public function get_name() {
       return 'blog';
    }
  
    public function get_title() {
-      return esc_html__( 'Latest Blog', 'martua' );
+      return esc_html__( 'Latest Blog', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -18,14 +18,14 @@ class martua_Widget_Blog extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
    protected function _register_controls() {
 
       $this->start_controls_section(
          'blog_section',
          [
-            'label' => esc_html__( 'Blog', 'martua' ),
+            'label' => esc_html__( 'Blog', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -33,12 +33,12 @@ class martua_Widget_Blog extends Widget_Base {
       $this->add_control(
          'order',
          [
-            'label' => __( 'Order', 'martua' ),
+            'label' => __( 'Order', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'ASC',
             'options' => [
-               'ASC'  => __( 'Ascending', 'martua' ),
-               'DESC' => __( 'Descending', 'martua' )
+               'ASC'  => __( 'Ascending', 'digiplace' ),
+               'DESC' => __( 'Descending', 'digiplace' )
             ],
          ]
       );
@@ -70,7 +70,7 @@ class martua_Widget_Blog extends Widget_Base {
               <div class="col-lg-4 col-md-6">
                 <div class="single-blog-post mb-30">
                     <div class="blog-thumb">
-                        <a href="<?php the_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'martua-404x297'); ?>" alt="<?php the_title() ?>"></a>
+                        <a href="<?php the_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'digiplace-404x297'); ?>" alt="<?php the_title() ?>"></a>
                     </div>
                     <div class="blog-content"> 
                         <h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
@@ -78,13 +78,13 @@ class martua_Widget_Blog extends Widget_Base {
                         <div class="row">
                           <div class="col-md-6">
                             <div class="blog-read-more">
-                                <a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'martua' ); ?></a>
+                                <a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'digiplace' ); ?></a>
                             </div>
                           </div>
                           <div class="col-md-6 text-right">
                             <div class="inner-blog-share mt-10">
                                 <a href="#"><i class="fas fa-share-alt"></i></a>
-                                <?php echo martua_social_sharing(); ?>
+                                <?php echo digiplace_social_sharing(); ?>
                             </div>
                           </div>
                         </div>
@@ -99,4 +99,4 @@ class martua_Widget_Blog extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Blog );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Blog );

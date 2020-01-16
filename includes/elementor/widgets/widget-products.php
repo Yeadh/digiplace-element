@@ -3,14 +3,14 @@ namespace Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // Product
-class martua_Widget_Product extends Widget_Base {
+class digiplace_Widget_Product extends Widget_Base {
  
    public function get_name() {
       return 'product';
    }
  
    public function get_title() {
-      return esc_html__( 'Products', 'martua' );
+      return esc_html__( 'Products', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -18,14 +18,14 @@ class martua_Widget_Product extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
    protected function _register_controls() {
 
       $this->start_controls_section(
          'product_section',
          [
-            'label' => esc_html__( 'Products', 'martua' ),
+            'label' => esc_html__( 'Products', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -34,7 +34,7 @@ class martua_Widget_Product extends Widget_Base {
       $this->add_control(
          'ppp',
          [
-            'label' => __( 'Post per page', 'martua' ),
+            'label' => __( 'Post per page', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::NUMBER,
             'default' => 8,
             'min' => 5,
@@ -47,12 +47,12 @@ class martua_Widget_Product extends Widget_Base {
       $this->add_control(
          'order',
          [
-            'label' => __( 'Order', 'martua' ),
+            'label' => __( 'Order', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'DESC',
             'options' => [
-               'ASC'  => __( 'Ascending', 'martua' ),
-               'DESC' => __( 'Descending', 'martua' )
+               'ASC'  => __( 'Ascending', 'digiplace' ),
+               'DESC' => __( 'Descending', 'digiplace' )
             ],
          ]
       );
@@ -99,10 +99,10 @@ class martua_Widget_Product extends Widget_Base {
         <div class="col-lg-4 col-md-6 grid-item <?php foreach ($product_terms as $portfolio_term) { echo esc_attr( $portfolio_term->slug ); } ?>">
           <div class="single-product-item mb-30">
             <div class="product-img">
-              <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('martua-405x506') ?></a>
+              <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('digiplace-405x506') ?></a>
             </div>
             <div class="product-overlay">
-              <h5><a href="<?php the_permalink() ?>"><?php the_title() ?> - <?php echo esc_html( get_post_meta( get_the_ID(), 'martua_sub_title', 1 ) ) ?></a></h5>
+              <h5><a href="<?php the_permalink() ?>"><?php the_title() ?> - <?php echo esc_html( get_post_meta( get_the_ID(), 'digiplace_sub_title', 1 ) ) ?></a></h5>
               <span><?php echo get_woocommerce_currency_symbol().get_post_meta( get_the_ID(), '_regular_price', true ); ?></span>
             </div>
           </div>
@@ -116,4 +116,4 @@ class martua_Widget_Product extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Product );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Product );

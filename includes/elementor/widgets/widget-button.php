@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Button
-class martua_Widget_Button extends Widget_Base {
+class digiplace_Widget_Button extends Widget_Base {
  
    public function get_name() {
       return 'button';
    }
  
    public function get_title() {
-      return esc_html__( 'Button', 'martua' );
+      return esc_html__( 'Button', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class martua_Widget_Button extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,22 +27,22 @@ class martua_Widget_Button extends Widget_Base {
       $this->start_controls_section(
          'button_section',
          [
-            'label' => esc_html__( 'Button', 'martua' ),
+            'label' => esc_html__( 'Button', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
 
       $this->add_control(
          'button_text', [
-            'label' => __( 'Button Text', 'martua' ),
+            'label' => __( 'Button Text', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Learn More','martua')
+            'default' => __('Learn More','digiplace')
          ]
       );
 
       $this->add_control(
          'button_url', [
-            'label' => __( 'Button URL', 'martua' ),
+            'label' => __( 'Button URL', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#'
          ]
@@ -51,13 +51,13 @@ class martua_Widget_Button extends Widget_Base {
       $this->add_control(
          'align',
          [
-            'label' => __( 'Align', 'martua' ),
+            'label' => __( 'Align', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'left',
             'options' => [
-               'center'  => __( 'Center', 'martua' ),
-               'left' => __( 'Left', 'martua' ),
-               'right' => __( 'Right', 'martua' )
+               'center'  => __( 'Center', 'digiplace' ),
+               'left' => __( 'Left', 'digiplace' ),
+               'right' => __( 'Right', 'digiplace' )
             ],
          ]
       );
@@ -80,7 +80,7 @@ class martua_Widget_Button extends Widget_Base {
       $this->add_inline_editing_attributes( 'color', 'basic' );
       ?>
 
-      <div class="martua-btn <?php if( $settings['color'] == 'yes' ){ echo 'alt-color';} ?>" style="text-align: <?php echo esc_attr($settings['align']) ?>">
+      <div class="digiplace-btn <?php if( $settings['color'] == 'yes' ){ echo 'alt-color';} ?>" style="text-align: <?php echo esc_attr($settings['align']) ?>">
          <a class="btn" href="<?php echo esc_url( $settings['button_url'] ); ?>">
             <?php echo esc_html( $settings['button_text'] ); ?></a>
       </div>
@@ -89,4 +89,4 @@ class martua_Widget_Button extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Button );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Button );

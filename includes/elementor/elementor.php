@@ -3,7 +3,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // get posts dropdown
-function martua_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = 'post_title') {
+function digiplace_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = 'post_title') {
   $options = [];
   $posts = get_posts($args);
   foreach ((array) $posts as $term) {
@@ -12,22 +12,22 @@ function martua_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = '
   return $options;
 }
 
-function martua_add_elementor_widget_categories( $elements_manager ) {
+function digiplace_add_elementor_widget_categories( $elements_manager ) {
 
 	$elements_manager->add_category(
-		'martua-elements',
+		'digiplace-elements',
 		[
-			'title' => esc_html__( 'martua Elements', 'martua' ),
+			'title' => esc_html__( 'digiplace Elements', 'digiplace' ),
 			'icon' => 'fa fa-plug',
 		]
 	);
 
 }
-add_action( 'elementor/elements/categories_registered', 'martua_add_elementor_widget_categories' );
+add_action( 'elementor/elements/categories_registered', 'digiplace_add_elementor_widget_categories' );
 
 //Elementor init
 
-class martua_ElementorCustomElement {
+class digiplace_ElementorCustomElement {
  
    private static $instance = null;
  
@@ -63,4 +63,4 @@ class martua_ElementorCustomElement {
 
 }
 
-martua_ElementorCustomElement::get_instance()->init();
+digiplace_ElementorCustomElement::get_instance()->init();

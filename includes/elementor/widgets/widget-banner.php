@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Banner Parallax
-class martua_Widget_Banner2 extends Widget_Base {
+class digiplace_Widget_Banner2 extends Widget_Base {
  
    public function get_name() {
       return 'banner2';
    }
  
    public function get_title() {
-      return esc_html__( 'Banner 2', 'martua' );
+      return esc_html__( 'Banner 2', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class martua_Widget_Banner2 extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class martua_Widget_Banner2 extends Widget_Base {
       $this->start_controls_section(
          'banner_section',
          [
-            'label' => esc_html__( 'Banner', 'martua' ),
+            'label' => esc_html__( 'Banner', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,7 +35,7 @@ class martua_Widget_Banner2 extends Widget_Base {
       $this->add_control(
       'banner_image',
         [
-          'label' => __( 'Banner image', 'martua' ),
+          'label' => __( 'Banner image', 'digiplace' ),
           'type' => \Elementor\Controls_Manager::MEDIA,
           'default' => [
             'url' => get_template_directory_uri().'/images/slider_bg02.jpg',
@@ -46,18 +46,18 @@ class martua_Widget_Banner2 extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'martua' ),
+            'label' => __( 'Title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Let\'s Start. Digital Marketplace for Themes & Plugins','martua')
+            'default' => __('Let\'s Start. Digital Marketplace for Themes & Plugins','digiplace')
          ]
       );
 
       $this->add_control(
          'description',
          [
-            'label' => __( 'Description', 'martua' ),
+            'label' => __( 'Description', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('New Products on the Marketplace.Your dream site download!','martua')
+            'default' => __('New Products on the Marketplace.Your dream site download!','digiplace')
          ]
       );
 
@@ -96,4 +96,4 @@ class martua_Widget_Banner2 extends Widget_Base {
     <?php }
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Banner2 );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Banner2 );

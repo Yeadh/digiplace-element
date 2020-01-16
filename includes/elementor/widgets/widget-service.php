@@ -3,14 +3,14 @@ namespace Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // service item
-class martua_Widget_Service extends Widget_Base {
+class digiplace_Widget_Service extends Widget_Base {
  
    public function get_name() {
       return 'service item';
    }
  
    public function get_title() {
-      return esc_html__( 'Service Item', 'martua' );
+      return esc_html__( 'Service Item', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -18,7 +18,7 @@ class martua_Widget_Service extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
 
    protected function _register_controls() {
@@ -26,7 +26,7 @@ class martua_Widget_Service extends Widget_Base {
       $this->start_controls_section(
          'service_section',
          [
-            'label' => esc_html__( 'Service Item', 'martua' ),
+            'label' => esc_html__( 'Service Item', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -34,12 +34,12 @@ class martua_Widget_Service extends Widget_Base {
       $this->add_control(
          'style',
          [
-            'label' => __( 'Service Style', 'martua' ),
+            'label' => __( 'Service Style', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'style1',
             'options' => [
-               'style1'  => __( 'Style 1', 'martua' ),
-               'style2' => __( 'Style 2', 'martua' ),
+               'style1'  => __( 'Style 1', 'digiplace' ),
+               'style2' => __( 'Style 2', 'digiplace' ),
             ],
          ]
       );
@@ -47,7 +47,7 @@ class martua_Widget_Service extends Widget_Base {
       $this->add_control(
          'icon',
          [
-            'label' => __( 'Icon', 'martua' ),
+            'label' => __( 'Icon', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -58,27 +58,27 @@ class martua_Widget_Service extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'martua' ),
+            'label' => __( 'Title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Awesome Design','martua'),
+            'default' => __('Awesome Design','digiplace'),
          ]
       );
 
       $this->add_control(
          'text',
          [
-            'label' => __( 'Text', 'martua' ),
+            'label' => __( 'Text', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Lorem ipsum dummy text are used here so replace your app data, ipsum dummy text are used here so','martua'),
+            'default' => __('Lorem ipsum dummy text are used here so replace your app data, ipsum dummy text are used here so','digiplace'),
          ]
       );
 
       $this->add_control(
          'button',
          [
-            'label' => __( 'Title', 'martua' ),
+            'label' => __( 'Title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Learn More','martua'),
+            'default' => __('Learn More','digiplace'),
             'condition' => ['style' => 'style1']
          ]
       );
@@ -86,7 +86,7 @@ class martua_Widget_Service extends Widget_Base {
       $this->add_control(
          'url',
          [
-            'label' => __( 'Title', 'martua' ),
+            'label' => __( 'Title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#',
             'condition' => ['style' => 'style1']
@@ -117,4 +117,4 @@ class martua_Widget_Service extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Service );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Service );

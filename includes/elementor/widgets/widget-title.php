@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class martua_Widget_Title extends Widget_Base {
+class digiplace_Widget_Title extends Widget_Base {
  
    public function get_name() {
       return 'title';
    }
  
    public function get_title() {
-      return esc_html__( 'Title', 'martua' );
+      return esc_html__( 'Title', 'digiplace' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class martua_Widget_Title extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'martua-elements' ];
+      return [ 'digiplace-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,9 +27,9 @@ class martua_Widget_Title extends Widget_Base {
       $this->start_controls_section(
          'title_section',
          [
-            'label' => esc_html__( 'Title', 'martua' ),
+            'label' => esc_html__( 'Title', 'digiplace' ),
             'type' => Controls_Manager::SECTION,
-            'default' => __('Featured Tranding of the week','martua')
+            'default' => __('Featured Tranding of the week','digiplace')
          ]
       );
 
@@ -37,37 +37,37 @@ class martua_Widget_Title extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'martua' ),
+            'label' => __( 'Title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Awesome Customer Service With Our Tools.','martua')
+            'default' => __('Awesome Customer Service With Our Tools.','digiplace')
          ]
       );
 
       $this->add_control(
          'sub-title',
          [
-            'label' => __( 'Sub Title', 'martua' ),
+            'label' => __( 'Sub Title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Market or marketplace is location where people regularly purchase and provisins.','martua')
+            'default' => __('Market or marketplace is location where people regularly purchase and provisins.','digiplace')
          ]
       );
 
       $this->add_control(
          'align',
          [
-            'label' => __( 'Alignment', 'martua' ),
+            'label' => __( 'Alignment', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                'text-left' => [
-                  'title' => __( 'Left', 'martua' ),
+                  'title' => __( 'Left', 'digiplace' ),
                   'icon' => 'fa fa-align-left',
                ],
                'text-center' => [
-                  'title' => __( 'Center', 'martua' ),
+                  'title' => __( 'Center', 'digiplace' ),
                   'icon' => 'fa fa-align-center',
                ],
                'text-right' => [
-                  'title' => __( 'Right', 'martua' ),
+                  'title' => __( 'Right', 'digiplace' ),
                   'icon' => 'fa fa-align-right',
                ],
             ],
@@ -79,10 +79,10 @@ class martua_Widget_Title extends Widget_Base {
       $this->add_control(
          'white',
          [
-            'label' => __( 'White title', 'martua' ),
+            'label' => __( 'White title', 'digiplace' ),
             'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'martua' ),
-            'label_off' => __( 'Off', 'martua' ),
+            'label_on' => __( 'On', 'digiplace' ),
+            'label_off' => __( 'Off', 'digiplace' ),
             'return_value' => 'white',
             'default' => 'no',   
          ]
@@ -112,4 +112,4 @@ class martua_Widget_Title extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new martua_Widget_Title );
+Plugin::instance()->widgets_manager->register_widget_type( new digiplace_Widget_Title );
