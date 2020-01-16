@@ -50,6 +50,7 @@ class martua_ElementorCustomElement {
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-title.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-accordion.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-counter.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-free.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-partner.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-products.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-service.php');
