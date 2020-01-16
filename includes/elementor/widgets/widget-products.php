@@ -97,20 +97,15 @@ class martua_Widget_Product extends Widget_Base {
 
 
         <div class="col-lg-4 col-md-6 grid-item <?php foreach ($product_terms as $portfolio_term) { echo esc_attr( $portfolio_term->slug ); } ?>">
-            <div class="single-product-item t-single-product-item mb-30">
-                <div class="product-img">
-                    <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('martua-403x300') ?></a>
-                </div>
-                <div class="t-product-overlay">
-                    <h5><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
-                    <span><?php echo esc_html( get_post_meta( get_the_ID(), 'martua_sub_title', 1 ) ) ?></span>
-                    <p> <?php echo $product->get_total_sales(); ?> Sales</p>
-                    <div class="t-product-meta">
-                        <?php woocommerce_template_loop_rating(); ?>
-                        <h6><?php echo get_woocommerce_currency_symbol().get_post_meta( get_the_ID(), '_regular_price', true ); ?></h6>
-                    </div>
-                </div>
+          <div class="single-product-item mb-30">
+            <div class="product-img">
+              <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('martua-405x506') ?></a>
             </div>
+            <div class="product-overlay">
+              <h5><a href="<?php the_permalink() ?>"><?php the_title() ?> - <?php echo esc_html( get_post_meta( get_the_ID(), 'martua_sub_title', 1 ) ) ?></a></h5>
+              <span><?php echo get_woocommerce_currency_symbol().get_post_meta( get_the_ID(), '_regular_price', true ); ?></span>
+            </div>
+          </div>
         </div>
 
 
